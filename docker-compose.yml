@@ -1,0 +1,15 @@
+services:
+  segmentation:
+    image: cityscapes:latest
+    build:
+      context: .  
+      dockerfile: Dockerfile 
+    environment:
+      - MODEL_PATH=${MODEL_PATH}
+      - DATASET_PATH=${DATASET_PATH}
+    volumes:
+      - ${MODEL_PATH}:/container/model
+      - ${DATASET_PATH}:/container/dataset
+    command: >
+      --model_path /container/model/unet_dice_v0.7_augment_dice_best.pth 
+      --dataset_path /container/dataset
