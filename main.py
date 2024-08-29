@@ -13,7 +13,7 @@ from data_handling.dataset import DatasetHandler
 from test import TestModel
 
 matplotlib.use('agg')
-
+print("Running test on Cityscapes dataset -- v0.1")
 # Argument parser for command-line arguments
 parser = argparse.ArgumentParser(description='Test a UNet model on Cityscapes dataset')
 parser.add_argument('--model_path', type=str, required=True, help='Path to the model checkpoint')
